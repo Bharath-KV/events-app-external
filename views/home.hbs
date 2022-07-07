@@ -5,14 +5,16 @@
         <p>{{ description }}</p>
         <p>Location: {{ location }}</p>
         <p>Likes: {{ likes }}
-        <form method="POST" action="/event/like">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="Like">
-        </form>
-        <form method="POST" action="/event/unlike">
-        <input type="hidden" value="{{id}}" name="id">
-        <input type="submit" value="UN-Like">
-        </form>
+          <div class="btn-group row" role="group" aria-label="Basic example">
+            <form class="col" method="POST" action="/event/like">
+              <input type="hidden" value="{{id}}" name="id">
+              <input type="submit" class="btn btn-success btn-md border-dark" value="Like">
+            </form>
+            <form class="col" method="POST" action="/event/unlike">
+              <input type="hidden" value="{{id}}" name="id">
+              <input type="submit" class="btn btn-danger btn-md border-dark" value="Unlike">
+            </form>
+          </div>
         </p>
     </li>
   {{/events}}
